@@ -9,6 +9,7 @@ let {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableHighlight,
   View
 } = React;
 
@@ -85,7 +86,7 @@ class Shooting extends React.Component {
         angle = 360 - Math.abs(angle);
       }
 
-      let status = angle < 90 && angle > 30 ? "ANGLE" : "REGULAR";
+      let status = angle < 90 && angle > 30 || angle === 0 ? "ANGLE" : "REGULAR";
       let direction = pos.x > lastX;
 
       this.setState({
@@ -122,7 +123,9 @@ class Shooting extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <TouchableHighlight
+        underlayColor="rgba(255,0,0,0.25)"
+        style={styles.container}>
         <View style={styles.shootingArea}>
           <Animated.View
             style={{
@@ -138,7 +141,7 @@ class Shooting extends React.Component {
               onKilled={this.duckKilled.bind(this)}/>
           </Animated.View>
         </View>
-      </View>
+      </TouchableHighlight>
     )
   }
 }

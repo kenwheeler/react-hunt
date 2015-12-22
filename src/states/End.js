@@ -57,7 +57,7 @@ class End extends React.Component {
           <Animated.View
             style={{
               position: "absolute",
-              left: (SHOOTING_WIDTH / 2) - 25,
+              left: (SHOOTING_WIDTH / 2),
               top: this.state.dogY
             }}>
             <Dog status={this.props.scored ? "CAUGHT" : "LAUGH"}/>

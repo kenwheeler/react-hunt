@@ -15,7 +15,7 @@ class Initial extends React.Component {
       <View style={styles.container}>
         <Text style={styles.text}>REACT HUNT</Text>
         <TouchableOpacity onPress={this.props.onStateChange.bind(null, "INTRO")}>
-          <Text style={styles.button}>Play Now!</Text>
+          <Text style={styles.button}>TAP SOME DUCKS!</Text>
         </TouchableOpacity>
       </View>
     )
@@ -31,12 +31,14 @@ let styles = StyleSheet.create({
   },
   button: {
     top: -50,
-    fontSize: 12,
-    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "rgb(60,188,252)",
+    backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#fff",
     padding: 10,
-    width: 200,
+    width: 180,
     textAlign: "center"
   },
   text: {
