@@ -21,6 +21,11 @@ let Intro = require('./src/states/Intro');
 let Shooting = require('./src/states/Shooting');
 let End = require('./src/states/End');
 
+const WINDOW_WIDTH = Dimensions.get('window').width;
+const WINDOW_HEIGHT = Dimensions.get('window').height;
+
+const SHOOTING_HEIGHT = WINDOW_HEIGHT * 0.3;
+
 const STATUS_BAR_HEIGHT = 20;
 
 class Stage extends React.Component {
@@ -80,9 +85,10 @@ class Stage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.ground}/>
         <Image
-          style={styles.stage}
-          source={{uri: "http://www.vaielab.com/Lab/DuckHunt/stage.png"}}/>
+            style={styles.stage}
+            source={{uri: "https://i.imgur.com/6wiJmng.png"}}/>
         {this.renderGameState()}
         <View style={styles.score}>
           <Text style={styles.scoreText}>
@@ -96,7 +102,8 @@ class Stage extends React.Component {
 
 let styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#3498db"
   },
   score: {
     position: "absolute",
@@ -109,13 +116,20 @@ let styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff"
   },
+  ground: {
+    position: "absolute",
+    backgroundColor: "#8B7300",
+    bottom: 0,
+    left: 0,
+    height: SHOOTING_HEIGHT - 40,
+    width: WINDOW_WIDTH
+  },
   stage: {
     position: "absolute",
-    height: Dimensions.get("window").height,
-    width: Dimensions.get("window").width * 3,
-    left: -450,
-    top: 0,
-    paddingTop: STATUS_BAR_HEIGHT
+    left: 0,
+    width: 375,
+    height: 84,
+    bottom: SHOOTING_HEIGHT / 2
   }
 });
 

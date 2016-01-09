@@ -63,7 +63,7 @@ class Dog extends React.Component {
             top,
             left
           }]}
-          source={{uri: "http://www.vaielab.com/Lab/DuckHunt/sprite.png"}}/>
+          source={{uri: "https://i.imgur.com/RLnV1OJ.png"}}/>
       </View>
     )
   }
@@ -81,7 +81,7 @@ let styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
   sprite: {
-    height: 400,
+    height: 267,
     width: 375
   }
 });

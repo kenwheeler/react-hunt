@@ -86,8 +86,8 @@ class Shooting extends React.Component {
         angle = 360 - Math.abs(angle);
       }
 
-      let status = angle < 90 && angle > 30 || angle === 0 ? "ANGLE" : "REGULAR";
-      let direction = pos.x > lastX;
+      let status = angle < 90 && angle > 45 || angle === 0 ? "ANGLE" : "REGULAR";
+      let direction = pos.x >= lastX;
 
       this.setState({
         duckReverse: direction,
